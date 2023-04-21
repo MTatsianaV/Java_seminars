@@ -29,6 +29,7 @@ public class task03_1 {
             inputByte = sc.nextByte();
         } catch (InputMismatchException e) {
             log.warning("Ошибка ввода: " + e.getMessage());
+            sc.close();
             return;
         }
         try (BufferedWriter writer = new BufferedWriter(new FileWriter("result.txt"))) {
@@ -37,5 +38,6 @@ public class task03_1 {
             log.warning("Ошибка записи в файл: " + e.getMessage());
         }
         System.out.println("Число успешно записано в файл.");
+        sc.close();
     }
 }
